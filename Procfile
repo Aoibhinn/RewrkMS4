@@ -1,1 +1,1 @@
-web:gunicorn rewrk.wsgi
+web: gunicorn rewrk.wsgi
