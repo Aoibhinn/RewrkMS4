@@ -4,6 +4,7 @@
 
 
 <div class="container-fluid">
+    <h3 class="text-center mb-3">How we have helped our clients</h3>
     <div class="row">
 
         <!-- Blog Entries Column -->
@@ -23,7 +24,7 @@
                                      <p class="author">Rewrk Team: {{post.employee}}</p> 
                                  </div>
                              </div>
-                             <a href="#" class="post-link">
+                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                  <h2 class="card-title"> {{ post.title}}</h2>
                                  <p class="card-text"> {{ post.excerpt}} </p>
                              </a>
