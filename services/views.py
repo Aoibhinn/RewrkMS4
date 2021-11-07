@@ -1,11 +1,12 @@
 from django.shortcuts import render
-from django .views import generic
-from .models import Service
+from django.views import generic 
+from . models import Service
 
-Class ServiceList(generic.ListView):
+class ServiceList(generic.ListView):
     model = Service
-    queryset = Course.objects.order_by('plan').filter(is_published=True)
-    context_object_name = "services"
+    # queryset = service.objects.filter(is_published=True)
+    template_name = 'services.html'
     paginate_by = 6
+
 
 
