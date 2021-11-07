@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}| Our Services{% endblock title %}
+
+{% block content %}
+
+<!-- Services -->
+<section id="services" class="py-5">
+	<div class="container">
+		<h3 class="text-center mb-3">Check out our Services</h3>
+		<div class="row">
+			{% if services %}
+			{% for service in services %}
+			<div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+				<div class="card listing-preview h-100">
+					<img class="card-img-top" src="{{ placeholder}}" alt="">
+					<div class="card-body">
+						<div class="listing-heading text-center">
+							<h5 class="text-primary">{{ service.service_title }}</h5>
+							<div class="row py-2 text-secondary">
+								<div class="col-6"><i class="fas fa-euro-sign text-secondary"></i>
+									{% if service.price == 0 %}
+									{{"Free"}}
+									{% else %}
+									{{service.price | intcomma}}
+									{% endif %}
+								</div>
+								<!-- <div class="col-6"><i class="fas fa-book text-secondary"></i> {{ course.lessons }}
+									lessons
+								</div> -->
+							</div>
+							<hr>
+							<a href="{#}" class="btn btn-primary btn-block">Buy Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+			{% else %}
+			<div class="col-md-12">
+				<p>No Services Available</p>
+			</div>
+			{% endif %}
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				{% if is_paginated %}
+				{% include 'partials/_pagination.html' with page=page_obj %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
