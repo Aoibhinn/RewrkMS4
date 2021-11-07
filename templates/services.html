@@ -3,16 +3,17 @@
 
 {% block content %}
 
-<!-- Services -->
-<section id="services" class="py-5">
+<!-- Courses -->
+<section id="courses" class="py-5">
 	<div class="container">
-		<h3 class="text-center mb-3">Check out our Services</h3>
+		<h3 class="text-center mb-3">Rewrk Services</h3>
 		<div class="row">
+
 			{% if services %}
 			{% for service in services %}
 			<div class="col-sm-12 col-md-6 col-lg-4 mb-4">
 				<div class="card listing-preview h-100">
-					<img class="card-img-top" src="{{ placeholder}}" alt="">
+					<img class="card-img-top" src="{{ course.main_pic.url }}" alt="">
 					<div class="card-body">
 						<div class="listing-heading text-center">
 							<h5 class="text-primary">{{ service.service_title }}</h5>
@@ -21,20 +22,18 @@
 									{% if service.price == 0 %}
 									{{"Free"}}
 									{% else %}
-									{{service.price}}
+									{{course.price}}
 									{% endif %}
 								</div>
-								<!-- <div class="col-6"><i class="fas fa-book text-secondary"></i> {{ course.lessons }}
-									lessons
-								</div> -->
 							</div>
 							<hr>
-							<a href="{#}" class="btn btn-primary btn-block">Buy Now</a>
+							<a href="{#}" class="btn btn-primary btn-block">Book Now</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			{% endfor %}
+
 			{% else %}
 			<div class="col-md-12">
 				<p>No Services Available</p>
