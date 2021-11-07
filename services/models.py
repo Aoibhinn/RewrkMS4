@@ -10,7 +10,7 @@ PLAN_CHOICES = (
 
 class Service(models.Model):
     employee = models.ForeignKey(User, on_delete=models.CASCADE)
-    serice_title = models.CharField(max_length=250)
+    service_title = models.CharField(max_length=250)
     service_description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     featured_image = CloudinaryField('image', default='placeholder')
@@ -20,7 +20,4 @@ class Service(models.Model):
 
 
     def __str__(self):
-        return self.title
-
-
-
+        return self.service_title
