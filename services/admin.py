@@ -4,11 +4,12 @@ from .models import Service
 
 
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('service_title', 'price', 'is_published')
+    list_display = ('id','service_title', 'price', 'is_published')
     list_filter = ('plan',)
     list_editable = ('is_published',)
     search_fields = ('service_title', 'service_description')
     list_per_page = 20
+
 
 
 admin.site.register(Service, ServiceAdmin)

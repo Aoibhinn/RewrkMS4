@@ -15,7 +15,7 @@ class Service(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    plan = models.CharField(choices=PLAN_CHOICES,max_length=1)
+    plan = models.CharField(choices=PLAN_CHOICES, max_length=1)
     is_published = models.BooleanField(default=True)
 
 
