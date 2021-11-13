@@ -9,3 +9,7 @@ class ServiceList(generic.ListView):
     queryset = Service.objects.filter(is_published=True)
     context_object_name = "services"
     paginate_by = 6
+
+class ServiceDetailView(DetailView):
+    template_name = 'services/service.html'
+    queryset = Service.objects.filter(is_published=True)
