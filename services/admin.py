@@ -8,7 +8,7 @@ class ServiceAdmin(admin.ModelAdmin):
     list_filter = ('plan',)
     list_editable = ('is_published',)
     search_fields = ('service_title', 'service_description')
-    list_per_page = 20
+    list_per_page = 6
 
 
 admin.site.register(Service, ServiceAdmin)
