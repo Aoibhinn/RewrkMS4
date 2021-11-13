@@ -9,4 +9,3 @@ class ServiceList(generic.ListView):
     queryset = Service.objects.filter(is_published=True)
     context_object_name = "services"
     paginate_by = 6
-

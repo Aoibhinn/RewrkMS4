@@ -17,6 +17,7 @@ class Service(models.Model):
     excerpt = models.TextField(blank=True)
     plan = models.CharField(choices=PLAN_CHOICES, max_length=1)
     is_published = models.BooleanField(default=True)
+    slug_service = models.SlugField(max_length=200, unique=True, null=True)
 
 
     def __str__(self):
