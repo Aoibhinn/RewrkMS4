@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from django.shortcuts import reverse
 
 PLAN_CHOICES = (
     ('B', 'basic'),
@@ -18,9 +17,11 @@ class Service(models.Model):
     excerpt = models.TextField(blank=True)
     plan = models.CharField(choices=PLAN_CHOICES, max_length=1)
     is_published = models.BooleanField(default=True)
-    slug_service = models.SlugField(max_length=200, unique=True, null=True)
+    slug = models.SlugField(max_length=200, unique=True, null=True)
 
 
     def __str__(self):
         return self.service_title
+    
+
 
